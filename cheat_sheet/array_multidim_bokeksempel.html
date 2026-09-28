@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Cheat Sheet: Multidimensjonal array</title>
+
+    <style>
+        #books {
+            display: flex;
+            gap: .5rem;
+        }
+        article {
+            border: 1px solid #ccc;
+            background: #f3f3f3;
+            padding: .5rem;
+            box-sizing: border-box;
+            width: 33%;
+        }
+    </style>
 </head>
 <body>
     <h2>Referansetest</h2>
@@ -45,7 +59,13 @@
 
         //Bruker .map for å hente alle bøker, og bygger HTML i booksHTML-variabelen
         let booksHTML = ""
-        bokregister.map(b => { booksHTML += `<article><h3>${b.title}</h3></article>`
+        bokregister.map(b => { booksHTML += 
+            `<article>
+                <h3>${b.title}</h3>
+                <p class="isbnnumber">${b.isbn}</p>
+                <p>${b.author.length === 1 ? "Forfatter" : "Forfattere"}: ${b.author.join(", ")}</p>
+                <p>Sidetall: ${b.pagecount}</p>
+            </article>`
         })
         console.log(booksHTML)
         document.getElementById("books").innerHTML = booksHTML
