@@ -44,11 +44,16 @@
 
         //REKURSIV FUNKSJON: NEDTELLING
         function countdown(from) {
+            //hvis from er større enn 0, må vi fortsette å trekke fra 1
             if(from > 0) {
+                //skriv ut tallet i from...
                 console.log(from)
+                //...trekk fra 1 fra from...
                 from--
+                //...og kjør nedtellingsfunksjon på nytt!
                 countdown(from)
             } else {
+                //Hvis from er 0, kan vi avslutte kjøringen
                 return
             }
         }
